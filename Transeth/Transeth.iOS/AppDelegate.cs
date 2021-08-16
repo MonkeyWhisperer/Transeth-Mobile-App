@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Lottie.Forms.Platforms.Ios;
 using Newtonsoft.Json;
+using ShareApp.iOS;
 using Transeth.Helper;
 using UIKit;
 
@@ -12,12 +14,26 @@ namespace Transeth.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
-        public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+      public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            if (Window == null)
+            {
+                Window = new UIWindow(frame: UIScreen.MainScreen.Bounds);
+                var initialViewController = new SplashViewController();
+                Window.RootViewController = initialViewController;
+                Window.MakeKeyAndVisible();
 
-            return base.FinishedLaunching(app, options);
+                return true;
+            }
+            else
+            {
+                global::Xamarin.Forms.Forms.Init();
+                //AnimationViewRenderer animationView = new AnimationViewRenderer();
+                //animationView.Init();
+                LoadApplication(new App());
+
+                return base.FinishedLaunching(app, options);
+            }
         }
 
         public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)

@@ -9,8 +9,8 @@ namespace Transeth
     {
         public App()
         {
+          
             InitializeComponent();
-
             MainPage = new MainPage();
         }
 

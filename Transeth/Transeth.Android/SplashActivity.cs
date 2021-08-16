@@ -1,19 +1,39 @@
-﻿using System.Threading.Tasks;
+﻿using Android.Animation;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Util;
-using AndroidX.AppCompat.App;
+using Com.Airbnb.Lottie;
+
 
 namespace Transeth.Droid
 {
     [Activity(Label = "Transeth", Icon = "@mipmap/ic_launcher", Theme = "@style/MyTheme.Splash", Immersive = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, MainLauncher = true, NoHistory = true)]
-    public class SplashActivity : AppCompatActivity
+    public class SplashActivity : Activity, Animator.IAnimatorListener
     {
-        protected override void OnResume()
+        protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnResume();
-            StartActivity(typeof(MainActivity));
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.Activity_Splash);
+
+            var animationView = FindViewById<LottieAnimationView>(Resource.Id.animation_view);
+            animationView.AddAnimatorListener(this);
+        }
+
+        public void OnAnimationCancel(Animator animation)
+        {
+        }
+
+        public void OnAnimationEnd(Animator animation)
+        {
+            StartActivity(new Intent(Application.Context, typeof(MainActivity)));
+        }
+
+        public void OnAnimationRepeat(Animator animation)
+        {
+        }
+
+        public void OnAnimationStart(Animator animation)
+        {
         }
     }
 }

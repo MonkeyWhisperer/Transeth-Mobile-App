@@ -4,10 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BackgroundColor="Black"
              x:Class="Transeth.MainPage">
 
-    <StackLayout x:Name="MainStack">
-      <WebView Source="https://www.transeth.org/" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></WebView>
+    <StackLayout x:Name="MainStack" BackgroundColor="Black">
+      <WebView Source="https://www.transeth.org/" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></WebView>
     </StackLayout>
 
 </ContentPage>

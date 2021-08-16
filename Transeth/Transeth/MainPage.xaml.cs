@@ -18,6 +18,7 @@ namespace Transeth
     { 
         public MainPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             //MainStack.Padding = new Thickness(0, 48, 0, 0);
         }
