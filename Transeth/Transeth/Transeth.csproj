@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -11,11 +11,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="4.0.10" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="CachedImages\earth_pulse.json" />
+    <None Remove="CachedImages\heart_globe.json" />
+    <None Remove="CachedImages\phone_globe.json" />
     <None Remove="Com.Airbnb.Xamarin.Forms.Lottie" />
+    <None Remove="CachedImages\previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CachedImages\phone_globe.json" />
+    <EmbeddedResource Include="CachedImages\earth_pulse.json" />
+    <EmbeddedResource Include="CachedImages\heart_globe.json" />
+    <EmbeddedResource Include="CachedImages\previous.png" />
   </ItemGroup>
 </Project>

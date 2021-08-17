@@ -5,10 +5,43 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              BackgroundColor="Black"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"       
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" 
              x:Class="Transeth.MainPage">
 
     <StackLayout x:Name="MainStack" BackgroundColor="Black">
-      <WebView Source="https://www.transeth.org/" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></WebView>
+        <StackLayout IsVisible="False" x:Name="BackBtn" HeightRequest="50" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <ffimageloading:CachedImage WidthRequest="20" HeightRequest="20"  HorizontalOptions="Start" VerticalOptions="Center" Aspect="AspectFit"  DownsampleToViewSize="true"  Source="resource://Transeth.CachedImages.previous.png" Margin="10,0,0,0" >
+            </ffimageloading:CachedImage>
+            <Label Text="Return to Transeth" FontSize="20" VerticalTextAlignment="Center" TextColor="White" FontAttributes="Bold"></Label>
+            <ContentView  HorizontalOptions="EndAndExpand" WidthRequest="80">
+                <lottie:AnimationView  x:Name="lottie_cv"
+                HeightRequest="80" Margin="0,-30,-30,-30"
+                Animation="resource://CachedImages.earth_pulse.json?assembly=Transeth"
+                AnimationSource="EmbeddedResource"
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="EndAndExpand"          
+                RepeatMode="Infinite"
+                    />
+            </ContentView>
+            
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ReturnToHomepage"></TapGestureRecognizer>
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+        <Grid VerticalOptions="FillAndExpand">
+            <ContentView  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20,20,20,20">
+                <lottie:AnimationView  x:Name="lottie_back_cv"              
+                Animation="resource://CachedImages.phone_globe.json?assembly=Transeth"
+                AnimationSource="EmbeddedResource"
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="FillAndExpand"          
+                RepeatMode="Infinite"
+                IsVisible="false"
+                    />
+            </ContentView>
+            <WebView Source="https://www.transeth.org/" x:Name="transethWebView" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></WebView>
+        </Grid>
     </StackLayout>
 
 </ContentPage>

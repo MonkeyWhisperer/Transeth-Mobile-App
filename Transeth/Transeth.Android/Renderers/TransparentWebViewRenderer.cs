@@ -18,6 +18,8 @@ namespace Transeth.Droid
 
             // Setting the background as transparent
             this.Control.SetBackgroundColor(Android.Graphics.Color.Transparent);
+            this.Control.Settings.SetSupportMultipleWindows(false);
+
         }
     }
 }
