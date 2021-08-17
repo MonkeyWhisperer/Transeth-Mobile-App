@@ -148,6 +148,8 @@
   <ItemGroup>
     <BundleResource Include="Resources\share.png" />
     <BundleResource Include="43108-business-team.json" />
+    <BundleResource Include="3738-blockchain-2.json" />
+    <BundleResource Include="Resources\logo_splash.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Transeth\Transeth.csproj">

@@ -13,15 +13,20 @@ namespace ShareApp.iOS
         {
             base.ViewDidLoad();
 
-            var viewAnimation = LOTAnimationView.AnimationNamed("43108-business-team");
-            
-            CoreGraphics.CGRect cGRect = new CoreGraphics.CGRect(x: 0, y: 200, width: 400, height: 400);
+            var viewAnimation = LOTAnimationView.AnimationNamed("3738-blockchain-2");
+            //var viewAnimation = LOTAnimationView.AnimationNamed("43108-business-team");
 
-            viewAnimation.Frame = cGRect;
+            viewAnimation.Frame = new CoreGraphics.CGRect(x: 0, y: 200, width: 400, height: 400);
+
+            //viewAnimation.Frame = cGRect;
+
+            viewAnimation.Center = this.View.Center;
+            viewAnimation.ContentMode = UIViewContentMode.ScaleAspectFit;
 
             View.AddSubview(viewAnimation);
 
             View.BackgroundColor = UIColor.Black;
+
             
 
             //center the animation 
