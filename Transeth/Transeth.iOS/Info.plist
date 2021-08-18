@@ -10,8 +10,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -23,7 +21,7 @@
 	<key>MinimumOSVersion</key>
 	<string>10</string>
 	<key>CFBundleDisplayName</key>
-	<string>Transeth3</string>
+	<string>Transeth</string>
 	<key>CFBundleIdentifier</key>
 	<string>alex.dev.com</string>
 	<key>CFBundleVersion</key>
@@ -31,7 +29,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
-	<string>Transeth3</string>
+	<string>Transeth</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleURLTypes</key>

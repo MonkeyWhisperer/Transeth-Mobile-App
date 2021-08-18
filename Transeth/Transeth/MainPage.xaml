@@ -19,8 +19,7 @@
                 HorizontalOptions="EndAndExpand"          
                 RepeatMode="Infinite"
                     />
-            </ContentView>
-            
+            </ContentView>            
             <StackLayout.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ReturnToHomepage"></TapGestureRecognizer>
             </StackLayout.GestureRecognizers>

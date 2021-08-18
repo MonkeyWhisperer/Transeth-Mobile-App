@@ -61,7 +61,6 @@ namespace Transeth
             BackBtn.IsVisible = false;
             lottie_cv.IsVisible = true;
             transethWebView.Source = RootURL;
-
             await Task.Delay(4000);
             lottie_back_cv.IsVisible = false;
             transethWebView.Opacity = 1;
