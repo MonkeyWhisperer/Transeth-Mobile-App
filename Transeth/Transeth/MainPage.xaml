@@ -15,11 +15,7 @@
             </ffimageloading:CachedImage>
             <Label Text="Return to Transeth" FontSize="20" VerticalTextAlignment="Center" TextColor="White" FontAttributes="Bold"></Label>
             <ContentView  HorizontalOptions="EndAndExpand" WidthRequest="80">
-                <lottie:AnimationView  x:Name="lottie_cv"
-                HeightRequest="80" Margin="0,-30,-30,-30"
-                Animation="resource://CachedImages.earth_pulse.json?assembly=Transeth"
-                AnimationSource="EmbeddedResource"
-                VerticalOptions="FillAndExpand" 
+                <lottie:AnimationView  x:Name="lottie_cv" HeightRequest="80" Margin="0,-30,-30,-30" Animation="resource://CachedImages.earth_pulse.json?assembly=Transeth" AnimationSource="EmbeddedResource"      VerticalOptions="FillAndExpand" 
                 HorizontalOptions="EndAndExpand"          
                 RepeatMode="Infinite"
                     />
@@ -40,7 +36,7 @@
                 IsVisible="false"
                     />
             </ContentView>
-            <WebView Source="https://www.transeth.org/" x:Name="transethWebView" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></WebView>
+            <WebView x:Name="transethWebView" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></WebView>
         </Grid>
     </StackLayout>
 

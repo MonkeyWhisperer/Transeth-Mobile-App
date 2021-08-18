@@ -30,6 +30,8 @@ namespace Transeth.iOS
                 global::Xamarin.Forms.Forms.Init();
                 //AnimationViewRenderer animationView = new AnimationViewRenderer();
                 //animationView.Init();
+
+                FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
                 LoadApplication(new App());
 
                 return base.FinishedLaunching(app, options);
