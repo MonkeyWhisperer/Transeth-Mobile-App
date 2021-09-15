@@ -57,12 +57,12 @@ namespace TransethShareExtension
                 }
             }
 
-            DispatchQueue.MainQueue.DispatchAfter(new DispatchTime(DispatchTime.Now, 5000000), () =>
+            DispatchQueue.MainQueue.DispatchAfter(new DispatchTime(DispatchTime.Now, 3000000), () =>
             {                
                 var alert = UIAlertController.Create("Thanks for sharing\n\n" + description + "\n", url, UIAlertControllerStyle.Alert);
                 PresentViewController(alert, true, () =>
                 {
-                    DispatchQueue.MainQueue.DispatchAfter(new DispatchTime(DispatchTime.Now, 5000000000), () =>
+                    DispatchQueue.MainQueue.DispatchAfter(new DispatchTime(DispatchTime.Now, 3000000000), () =>
                     {
                         ExtensionContext.CompleteRequest(new NSExtensionItem[0], null);
                     });

@@ -20,7 +20,7 @@ namespace Transeth.iOS
 
             this.BackgroundColor = UIKit.UIColor.Clear;
             this.Opaque = false;
-
+            this.AllowsLinkPreview = false;
             //NavigationDelegate = this;
         }
 

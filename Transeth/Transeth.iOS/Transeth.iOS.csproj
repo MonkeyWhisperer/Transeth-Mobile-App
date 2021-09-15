@@ -65,9 +65,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
+    <CodesignProvision>Transeth Distribution</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -152,12 +153,15 @@
     <BundleResource Include="Resources\share.png" />
     <BundleResource Include="43108-business-team.json" />
     <BundleResource Include="3738-blockchain-2.json" />
-    <BundleResource Include="Resources\logo_splash.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Transeth\Transeth.csproj">
       <Project>{94b4f6e0-5402-4f86-820d-8c99b02e1367}</Project>
       <Name>Transeth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TransethShareExtension\TransethShareExtension.csproj">
+      <IsAppExtension>true</IsAppExtension>
+      <Name>TransethShareExtension</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
