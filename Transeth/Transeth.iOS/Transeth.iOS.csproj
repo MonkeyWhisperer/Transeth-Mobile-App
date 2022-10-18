@@ -162,6 +162,7 @@
     <ProjectReference Include="..\..\TransethShareExtension\TransethShareExtension.csproj">
       <IsAppExtension>true</IsAppExtension>
       <Name>TransethShareExtension</Name>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
   </ItemGroup>
 </Project>

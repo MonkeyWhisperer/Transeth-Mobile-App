@@ -166,7 +166,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\splash_logo.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\file_paths.xml" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\43108-business-team.json" />
   </ItemGroup>

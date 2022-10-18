@@ -7,6 +7,10 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Content;
+using AndroidX.Core.Content;
+using Android;
+using Xamarin.Essentials;
+
 
 namespace Transeth.Droid
 {
@@ -14,7 +18,8 @@ namespace Transeth.Droid
     [IntentFilter(new[] { "android.intent.action.SEND" }, Categories = new[] { Intent.CategoryDefault }, DataMimeTypes = new[] { "text/plain" })]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+
+        protected async override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
@@ -24,10 +29,16 @@ namespace Transeth.Droid
 
             base.OnCreate(savedInstanceState);
 
+            
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
+
+            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.Camera) != Permission.Granted)
+            {
+                await Permissions.RequestAsync<Permissions.Camera>();   
+            }
 
             LoadApplication(new App());
 

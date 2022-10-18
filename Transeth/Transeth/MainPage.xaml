@@ -35,7 +35,7 @@
                 IsVisible="false"
                     />
             </ContentView>
-            <WebView x:Name="transethWebView" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></WebView>
+            <WebView x:Name="transethWebView" AutomationId="transethWebView" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></WebView>
         </Grid>
     </StackLayout>
 

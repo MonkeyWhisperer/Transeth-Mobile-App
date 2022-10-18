@@ -26,11 +26,39 @@ namespace Transeth
             MainStack.Padding = new Thickness(0, 48, 0, 0);
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
-            base.OnAppearing(); 
+            await CheckAndRequestCameraPermission();
+
+            //var photo = await MediaPicker.CapturePhotoAsync();
+
+            base.OnAppearing();
         }
-  
+
+        public async Task<PermissionStatus> CheckAndRequestCameraPermission()
+        {
+            var status = await Permissions.CheckStatusAsync<Permissions.Camera>();
+
+            if (status == PermissionStatus.Granted)
+                return status;
+
+            if (status == PermissionStatus.Denied && DeviceInfo.Platform == DevicePlatform.iOS)
+            {
+                await DisplayAlert("Permissions Denied", "Grant Eyez-App permission manually from Settings -> Privacy -> Camera", "OK");
+
+                return status;
+            }
+
+            if (Permissions.ShouldShowRationale<Permissions.Camera>())
+            {
+                // Prompt the user with additional information as to why the permission is needed
+            }
+
+            status = await Permissions.RequestAsync<Permissions.Camera>();
+
+            return status;
+        }
+
         private async void Webview_Navigating(object sender, WebNavigatingEventArgs e)
         {
             if (!e.Url.Contains(RootURL))
